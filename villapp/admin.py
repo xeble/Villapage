@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, TasadelMes, Deudas
+from .models import Profile, Deudas
 
 
 class ProfileAdmin (admin.ModelAdmin):
@@ -8,10 +8,9 @@ class ProfileAdmin (admin.ModelAdmin):
 
 class DeudasAdmin(admin.ModelAdmin):
     model = Deudas
-    list_display = ('nombreD', "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre" ,"Noviembre", "Diciembre", "deudatotal")
+    list_display = ('nombreD' , 'mes', 'pago_dolares', 'pago_bolivares', 'date_created')
 
 
 # Register your models here.
 admin.site.register(Profile,ProfileAdmin)
-admin.site.register(TasadelMes)
 admin.site.register(Deudas, DeudasAdmin)

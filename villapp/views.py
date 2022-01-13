@@ -17,6 +17,5 @@ def feed(request, username=None, deu = None, habitantes = None):
 		user = current_user
 		habitantes = Profile.objects.filter(user = request.user)
 		deu=Deudas.objects.filter(nombreD = request.user)
-		tasa = TasadelMes.objects.all()
 		
-	return render(request, 'social/feed.html', {'user':user, 'deu':deu, 'habitantes': habitantes, 'tasa': tasa })
+	return render(request, 'social/feed.html', {'user':user, 'deu':deu, 'habitantes': habitantes})
